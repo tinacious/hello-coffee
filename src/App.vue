@@ -29,7 +29,7 @@ body {
 
 .app {
   font-size: 130%;
-  font-family: 'freight-text-pro', serif;
+  font-family: "freight-text-pro", serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

@@ -9,13 +9,23 @@
         <h2>{{ entry.name }}</h2>
 
         <ul class="coffees__metadata">
-          <li class="coffees__metadata-item coffees__country">{{ getFlag(entry.country) }} {{ entry.country }}</li>
-          <li class="coffees__metadata-item coffees__roaster">🔥{{ entry.roaster }}</li>
-          <li class="coffees__metadata-item coffees__rating">{{ getStars(entry.rating) }}</li>
+          <li class="coffees__metadata-item coffees__country">
+            {{ getFlag(entry.country) }} {{ entry.country }}
+          </li>
+          <li class="coffees__metadata-item coffees__roaster">
+            🔥{{ entry.roaster }}
+          </li>
+          <li class="coffees__metadata-item coffees__rating">
+            {{ getStars(entry.rating) }}
+          </li>
         </ul>
 
         <div class="coffees__image-wrapper">
-          <img class="coffees__image" v-bind:src="entry.photo" v-bind:alt="`Photo of ${entry.name} coffee`">
+          <img
+            class="coffees__image"
+            v-bind:src="entry.photo"
+            v-bind:alt="`Photo of ${entry.name} coffee`"
+          />
         </div>
 
         <div class="coffees__tasting-notes">
@@ -29,10 +39,10 @@
 </template>
 
 <script>
-import { Coffee } from '../services/Coffee';
-import { Stars } from '../mixins/stars';
+import { Coffee } from "../services/Coffee";
+import { Stars } from "../mixins/stars";
 
-import Loading from  "@/components/Loading";
+import Loading from "@/components/Loading";
 
 export default {
   name: "HelloCoffee",
@@ -47,7 +57,7 @@ export default {
     return {
       loading: true,
       entries: []
-    }
+    };
   },
 
   methods: {
@@ -55,24 +65,25 @@ export default {
      * Get all of the coffees ☕️
      */
     _initViewData() {
-      Coffee.get().then((coffees) => {
-        this.entries = coffees;
-      })
-      .finally(() => {
-        this.loading = false;
-      });
+      Coffee.get()
+        .then(coffees => {
+          this.entries = coffees;
+        })
+        .finally(() => {
+          this.loading = false;
+        });
     },
 
     getFlag(country) {
-      const k = country.toLowerCase().replace(' ', '_');
+      const k = country.toLowerCase().replace(" ", "_");
       const countryFlagMap = {
-        colombia: '🇨🇴',
-        costa_rica: '🇨🇷',
-        el_salvador: '🇸🇻',
-        ethiopia: '🇪🇹',
-        guatemala: '🇬🇹',
-        kenya: '🇰🇪',
-        tanzania: '🇹🇿',
+        colombia: "🇨🇴",
+        costa_rica: "🇨🇷",
+        el_salvador: "🇸🇻",
+        ethiopia: "🇪🇹",
+        guatemala: "🇬🇹",
+        kenya: "🇰🇪",
+        tanzania: "🇹🇿"
       };
 
       const flag = countryFlagMap[k];
@@ -80,8 +91,8 @@ export default {
         console.warn(`No flag for country ${country}`);
       }
 
-      return flag || '';
-    },
+      return flag || "";
+    }
   },
 
   created() {
@@ -91,7 +102,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-@import '../styles/vars';
+@import "../styles/vars";
 
 .coffees {
   &__entry {
@@ -133,7 +144,6 @@ export default {
   &__image {
     box-sizing: border-box;
     max-width: 100%;
-    // max-width: 330px;
     display: block;
     margin: 30px auto;
     border-radius: 6px;
