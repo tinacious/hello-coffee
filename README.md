@@ -1,5 +1,10 @@
 # hello-coffee
 
+Proof of Concept app by [Tinacious Design](https://tinaciousdesign.com) to test out Vue.js and Contentful.
+
+![](screenshot.png)
+
+
 ## Project setup
 ```
 yarn install
