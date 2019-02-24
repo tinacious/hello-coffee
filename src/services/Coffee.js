@@ -12,8 +12,9 @@ export const Coffee = {
     client.getEntries().then(({ items }) =>
       items
         .map(({ fields }) => fields)
-        .map(({ description, ...rest }) => ({
+        .map(({ photo, description, ...rest }) => ({
           ...rest,
+          photo: photo.fields.file.url,
           description: documentToHtmlString(description)
         }))
     )

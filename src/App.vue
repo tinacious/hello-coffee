@@ -1,28 +1,62 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+  <div id="app" class="app">
+    <nav class="nav">
+      <div class="container">
+        <router-link class="nav__link" to="/">Coffee</router-link>
+        <router-link class="nav__link" to="/about">About</router-link>
+      </div>
+    </nav>
+    <div class="container">
+      <router-view />
     </div>
-    <router-view />
   </div>
 </template>
 
 <style lang="scss">
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
+@import "./styles/vars";
+@import "./styles/layout";
+@import "./styles/typography";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: url("./assets/retina_wood.png");
+  color: $black;
+  margin: 0;
+}
+
+.app {
+  font-size: 130%;
+  font-family: 'freight-text-pro', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
 }
-#nav {
-  padding: 30px;
-  a {
+
+.container {
+  @include container;
+}
+
+.nav {
+  background: $brown;
+  text-align: center;
+  border-bottom: 4px solid darken($brown, 10%);
+
+  &__link {
+    display: inline-block;
+    padding: 10px 20px;
     font-weight: bold;
-    color: #2c3e50;
+    color: rgba($white, 0.6);
+    text-decoration: none;
+
+    &:hover {
+      color: $white;
+      text-decoration: underline;
+    }
+
     &.router-link-exact-active {
-      color: #42b983;
+      color: $white;
     }
   }
 }

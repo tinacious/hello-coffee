@@ -1,0 +1,12 @@
+@import 'vars';
+
+@mixin container {
+  box-sizing: border-box;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 12px;
+
+  @media (min-width: #{$bp-medium}) {
+    padding: 0 100px;
+  }
+}
