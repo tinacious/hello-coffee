@@ -61,13 +61,17 @@ export default {
   },
 
   methods: {
+    _sortByRatingDecending(a, b) {
+      return b.rating - a.rating;
+    },
+
     /**
      * Get all of the coffees ☕️
      */
     _initViewData() {
       Coffee.get()
         .then(coffees => {
-          this.entries = coffees;
+          this.entries = coffees.sort(this._sortByRatingDecending);
         })
         .finally(() => {
           this.loading = false;
