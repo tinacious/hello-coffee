@@ -2,8 +2,20 @@
   <div id="app" class="app">
     <nav class="nav">
       <div class="container">
-        <router-link class="nav__link" to="/">Coffee</router-link>
-        <router-link class="nav__link" to="/about">About</router-link>
+        <router-link
+          class="nav__link"
+          exact-active-class="nav__link--active"
+          to="/"
+        >
+          Coffee
+        </router-link>
+        <router-link
+          class="nav__link"
+          exact-active-class="nav__link--active"
+          to="/about"
+        >
+          About
+        </router-link>
       </div>
     </nav>
     <div class="container">
@@ -50,13 +62,13 @@ body {
     color: rgba($white, 0.6);
     text-decoration: none;
 
+    &--active {
+      color: $white;
+    }
+
     &:hover {
       color: $white;
       text-decoration: underline;
-    }
-
-    &.router-link-exact-active {
-      color: $white;
     }
   }
 }
