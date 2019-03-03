@@ -3,13 +3,13 @@ import HelloCoffee from "@/components/HelloCoffee.vue";
 import { Coffee } from "@/services/Coffee";
 
 describe("HelloCoffee.vue", () => {
-  let wrapper, colombiana, kenyan;
+  let colombiana, kenyan;
 
   const initComponent = async () => {
-    wrapper = await shallowMount(HelloCoffee);
-
+    const wrapper = await shallowMount(HelloCoffee);
     colombiana = wrapper.findAll(".coffees__entry").at(0);
     kenyan = wrapper.findAll(".coffees__entry").at(1);
+    return wrapper;
   };
 
   beforeEach(() => {
