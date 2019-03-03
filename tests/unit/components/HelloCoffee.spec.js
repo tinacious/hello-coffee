@@ -21,7 +21,7 @@ describe("HelloCoffee.vue", () => {
         roaster: "San Sebastian",
         rating: 5,
         tastingNotes: "Lemongrass, sugarcane, juicy",
-        description: "Que sabroso"
+        description: "Que <strong>sabroso</strong>"
       },
       {
         photo: "http://path/to/img/kenyan.png",
@@ -30,7 +30,7 @@ describe("HelloCoffee.vue", () => {
         country: "Kenya",
         rating: 4,
         tastingNotes: "grapefruit, floral, juicy",
-        description: "Delicious"
+        description: "Delicious!"
       }
     ];
 
@@ -73,6 +73,19 @@ describe("HelloCoffee.vue", () => {
     expect(kenyan.find(".coffees__tasting-notes").text()).toEqual(
       "grapefruit, floral, juicy"
     );
+  });
+
+  it("shows the review description", async () => {
+    await initComponent();
+
+    // Renders the HTML
+    expect(colombiana.find(".coffees__description").text()).toEqual(
+      "Que sabroso"
+    );
+    expect(colombiana.find(".coffees__description").html()).toEqual(
+      '<div class="coffees__description">Que <strong>sabroso</strong></div>'
+    );
+    expect(kenyan.find(".coffees__description").text()).toEqual("Delicious!");
   });
 
   it("shows the rating", async () => {
