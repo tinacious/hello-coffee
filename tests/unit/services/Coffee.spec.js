@@ -33,8 +33,4 @@ describe("Coffee service", () => {
     expect(coffees[1].rating).toEqual(4);
     expect(coffees[1].photo).toEqual("https://contentful-url/path/to/buna.jpg");
   });
-
-  it("sorts the coffees", async () => {
-    await Coffee.get();
-  });
 });
