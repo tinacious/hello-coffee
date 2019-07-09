@@ -81,13 +81,21 @@ export default {
     getFlag(country) {
       const k = country.toLowerCase().replace(" ", "_");
       const countryFlagMap = {
+        brazil: "🇧🇷",
         colombia: "🇨🇴",
         costa_rica: "🇨🇷",
         el_salvador: "🇸🇻",
         ethiopia: "🇪🇹",
         guatemala: "🇬🇹",
+        honduras: "🇭🇳",
+        india: "🇮🇳",
+        indonesia: "🇮🇩",
+        jamaica: "🇯🇲",
         kenya: "🇰🇪",
-        tanzania: "🇹🇿"
+        mexico: "🇲🇽",
+        tanzania: "🇹🇿",
+        uganda: "🇺🇬",
+        vietname: "🇻🇳",
       };
 
       const flag = countryFlagMap[k];
