@@ -96,7 +96,7 @@ export default {
         nicaragua: "🇳🇮",
         tanzania: "🇹🇿",
         uganda: "🇺🇬",
-        vietname: "🇻🇳",
+        vietname: "🇻🇳"
       };
 
       const flag = countryFlagMap[k];
