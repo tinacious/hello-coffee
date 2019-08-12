@@ -93,6 +93,7 @@ export default {
         jamaica: "🇯🇲",
         kenya: "🇰🇪",
         mexico: "🇲🇽",
+        nicaragua: "🇳🇮",
         tanzania: "🇹🇿",
         uganda: "🇺🇬",
         vietname: "🇻🇳",
